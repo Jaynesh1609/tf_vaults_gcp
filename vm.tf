@@ -35,7 +35,7 @@ provider "google" {
   region       = "asia-south2"
   #access_token =  data.vault_gcp_auth_backend_role.token-vault.outputs.service_account_email
   access_token  = data.vault_gcp_auth_backend_role.token-vault
-  project      = "idyllic-vehicle-336414"
+  project      = "add_ur_Project_ name"
 }
 
 
