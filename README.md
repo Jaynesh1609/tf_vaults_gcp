@@ -1,4 +1,10 @@
 # tf_vaults_gcp
+
+
+# create ur folder and add both vm-instance and main tf in differnt folder then apply changes
+   ALso create backend.tf for both the folder specificlly
+   
+   
 Playing around with gcp n vaults
 Tried to integrate with vaults and aws with terraform
 
