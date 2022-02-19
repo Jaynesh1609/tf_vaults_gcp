@@ -11,7 +11,7 @@ terraform {
   }
 }
 
-
+/*
 
 terraform {
   backend "local" {
@@ -25,6 +25,22 @@ data "terraform_remote_state" "vault-test" {
     path = "../Vault-setup/terraform.tfstate"
   }
 }
+
+*/
+  
+    
+// this is about vault tfstate file and ec2.tf will contact with @vault-setup state file whose tfsate file is saved in s3 bucket
+
+data "terraform_remote_state" "vaul-test" {
+  backend = "gcs"
+  config = {
+    bucket = "your_bucket_name"
+    key = "terraform_vault/terraform.tfstate"
+    #region = "ap-south-1"
+  }
+}
+
+//this will contact with you vault an trying to give you key in accordance with
 
 data "vault_gcp_auth_backend_role" "token-vault" {
   backend   = data.terraform_remote_state.vault-test.outputs.backend
